@@ -53,3 +53,15 @@ const RegularL= TextStyle(
   fontWeight: FontWeight.bold,
   color: Colors.black,
 );
+
+const timeText= TextStyle(
+  fontSize: 40,
+  fontWeight: FontWeight.normal,
+  color: Colors.black,
+);
+
+const timeTextS= TextStyle(
+  fontSize: 20,
+  fontWeight: FontWeight.normal,
+  color: Colors.black,
+);

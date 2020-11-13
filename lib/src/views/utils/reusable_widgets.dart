@@ -409,3 +409,37 @@ class PatientReport_Item extends StatelessWidget {
                                 }
                       }
 
+class ReminderItem extends StatelessWidget {
+  final String time;
+  final String day;
+
+  const ReminderItem({Key key, this.time, this.day}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      constraints: BoxConstraints(
+        minWidth: 200,
+        minHeight: 100,
+      ),
+      color: Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.all(15),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Text(time, style: timeText,),
+                Spacer(),
+
+
+              ],
+            ),
+            Text(day,style: timeTextS,)
+          ],
+        ),
+      ),
+    );
+  }
+}
