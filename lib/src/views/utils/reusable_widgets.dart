@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'constant.dart';
 
 class RoundedRaisedButton extends StatelessWidget {
   RoundedRaisedButton(
@@ -123,3 +126,88 @@ class RoundedBorderedRaisedButton extends StatelessWidget {
     );
   }
 }
+
+
+
+class Dasboard_Menu extends StatelessWidget {
+  final String value;
+  final String text;
+
+  const Dasboard_Menu({Key key, this.value, this.text}) : super(key: key);
+  @override
+
+  Widget build(BuildContext context) {
+    return Container(
+      constraints: BoxConstraints(
+        maxHeight: 116,
+        maxWidth: 160,
+      ),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(15)),
+          border: Border.all(
+            color: kThemeColor,
+            width: 3,
+          )),
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(value,
+              style: HomeText,
+            ),
+            Text(text,
+              style: HomeSub,)
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class DasBoard_Items extends StatelessWidget {
+  final String name;
+  final String bed;
+  final Color color;
+
+  const DasBoard_Items({Key key, this.name,this.bed, this.color}) : super(key: key);@override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(15)),
+          border: Border.all(
+          color: Colors.blueGrey,
+          width: 2,
+          
+        )),
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+                  Row(
+                      children: [
+                          Text(name, style: HomeItem,),
+                          Spacer(),
+                          Container(
+                          constraints: BoxConstraints(
+                          maxHeight: 20,
+                            maxWidth: 20,
+                      ),
+                           decoration: BoxDecoration(
+                            color: color,
+                          borderRadius: BorderRadius.all(Radius.circular(10))
+                      ),
+                      )
+                  ],
+                    ),
+                      Text('Bed No:$bed',
+                        style: HomeItemSub,
+                    )]),
+      ),
+    );
+  }
+}
+

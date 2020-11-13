@@ -11,9 +11,33 @@ const greyText= TextStyle(
 color: Color.fromRGBO(151, 151, 151, 1)
 );
 
+const HomeText= TextStyle(
+  fontSize: 40,
+  fontWeight: FontWeight.bold,
+  color: Color.fromRGBO(0, 185, 198, 1),
+);
+
+const HomeSub= TextStyle(
+  fontSize: 20,
+  fontWeight: FontWeight.bold,
+  color: Colors.black,
+);
 
 const primaryText= TextStyle(
     fontSize: 15,
   fontWeight: FontWeight.bold,
   color: Color.fromRGBO(0, 185, 198, 1),
+);
+
+
+const HomeItem= TextStyle(
+  fontSize: 19,
+  fontWeight: FontWeight.bold,
+  color: Colors.black,
+);
+
+const HomeItemSub= TextStyle(
+  fontSize: 19,
+  fontWeight: FontWeight.normal,
+  color: Colors.black,
 );
