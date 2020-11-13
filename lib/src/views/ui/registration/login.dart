@@ -1,15 +1,85 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:health_monitoring_system/src/business_logic/services/firebase_services/firebase_services.dart';
 import 'package:health_monitoring_system/src/views/ui/registration/register.dart';
 import 'package:health_monitoring_system/src/views/utils/constant.dart';
 import 'package:health_monitoring_system/src/views/utils/reusable_widgets.dart';
 
 class Login extends StatefulWidget {
+  Login({this.auth, this.loginCallback});
+
+  final BaseAuth auth;
+  final VoidCallback loginCallback;
   @override
+
   _LoginState createState() => _LoginState();
 }
 
 class _LoginState extends State<Login> {
+  String email,password;
+  String _errorMessage;
+
+  bool _isLoginForm = true;
+  bool _isLoading;
+
+  bool validateAndSave() {
+    if (email!=null && password!=null) {
+      return true;
+    }
+    return false;
+  }
+
+
+
+  void validateAndSubmit() async {
+    setState(() {
+      _isLoading = true;
+    });
+    if (validateAndSave()) {
+      String userId = "";
+      try {
+        if (_isLoginForm) {
+          userId = await widget.auth.signIn(email, password);
+          print('Signed in: $userId');
+        } else {
+          userId = await widget.auth.signUp(email, password);
+          // Firebase_Firestore_END.save_user(userId, _name,_email);
+          //widget.auth.sendEmailVerification();
+          //_showVerifyEmailSentDialog();
+          print('Signed up user: $userId');
+        }
+        setState(() {
+          _isLoading = false;
+        });
+
+        if (userId.length > 0 && userId != null) {
+          widget.loginCallback();
+        }
+      } catch (e) {
+        print('Error: $e');
+        setState(() {
+          _isLoading = false;
+          _errorMessage = e.message;
+        });
+      }
+    }
+  }
+
+  @override
+  void initState() {
+    _errorMessage = "";
+    _isLoading = false;
+    _isLoginForm = true;
+    super.initState();
+  }
+
+  void resetForm() {
+    _errorMessage = "";
+  }
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,6 +112,10 @@ class _LoginState extends State<Login> {
                         height: 50,
                       ),
                       TextFormField(
+                        onChanged: (value)
+                        {
+                          email = value;
+                        },
                         decoration: new InputDecoration(
                           hintText: 'Email',
                           fillColor: kWhiteColor,
@@ -67,6 +141,10 @@ class _LoginState extends State<Login> {
                         height: 15,
                       ),
                       TextFormField(
+                        onChanged: (value)
+                        {
+                          password=value;
+                        },
                         obscureText: true,
                         decoration: InputDecoration(
                           hintText: 'Password',
@@ -101,7 +179,10 @@ class _LoginState extends State<Login> {
                       SizedBox(
                         height: 20,
                       ),
-                      RoundedRaisedButton(text: 'SIGN IN', textColor: kWhiteColor, imageLink: null, onTap: (){}, backgroundColor: kThemeColor),
+                      RoundedRaisedButton(text: 'SIGN IN', textColor: kWhiteColor, imageLink: null, onTap: (){
+                        validateAndSubmit();
+                        //print(email+":"+password);
+                      }, backgroundColor: kThemeColor),
                       SizedBox(
                         height: 20,
                       ),
