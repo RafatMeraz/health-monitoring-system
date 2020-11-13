@@ -11,6 +11,12 @@ const greyText= TextStyle(
 color: Color.fromRGBO(151, 151, 151, 1)
 );
 
+const greyTextL= TextStyle(
+    fontSize: 20,
+    color: Color.fromRGBO(151, 151, 151, 1)
+);
+
+
 const HomeText= TextStyle(
   fontSize: 40,
   fontWeight: FontWeight.bold,
@@ -42,3 +48,8 @@ const HomeItemSub= TextStyle(
   color: Colors.black,
 );
 
+const RegularL= TextStyle(
+  fontSize: 30,
+  fontWeight: FontWeight.bold,
+  color: Colors.black,
+);

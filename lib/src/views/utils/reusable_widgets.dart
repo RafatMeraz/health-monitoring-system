@@ -359,3 +359,53 @@ class ReportItems extends StatelessWidget {
     );
   }
 }
+
+
+// ignore: camel_case_types
+class PatientReport_Item extends StatelessWidget {
+  final Color color;
+  final String value;
+  final String datetime;
+
+  const PatientReport_Item({Key key, this.color, this.value, this.datetime}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        constraints: BoxConstraints(
+            minWidth: double.infinity,
+            minHeight: 80,
+              ),
+              decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(Radius.circular(15))
+            ),
+              child: Padding(
+                  padding: const EdgeInsets.all(14),
+                  child: Column(
+                          children: [
+                                  Row(
+                                    children: [
+                                          Spacer(),
+                                          ColorCircle(
+                                              color: color,
+                                                )
+                                              ],
+                                                ),
+                                  Row(
+                                      children: [
+                                          Icon(FontAwesomeIcons.heart, color: kThemeColor,),
+                                          SizedBox(width: 5,),
+                                          Text(value, style: RegularL,),
+                                          SizedBox(width: 5,),
+                                          Text('bpm',style: HomeSub,),
+                                          Spacer(),
+                                          Text(datetime,style: HomeItemSub,)
+                                        ],
+                                          )
+                                      ],
+                                      ),
+                                            ),
+                                           );
+                                }
+                      }
+
