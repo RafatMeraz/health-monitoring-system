@@ -13,6 +13,12 @@ class _ReminderState extends State<Reminder> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: kThemeColor,
+        child: Icon(Icons.add),
+        onPressed: () {  },
+
+      ),
       backgroundColor: Color.fromRGBO(215, 243, 245, 1),
       appBar: AppBar(
         leading: IconButton(icon:Icon(Icons.arrow_back),
