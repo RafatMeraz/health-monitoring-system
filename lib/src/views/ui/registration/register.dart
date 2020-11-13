@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_monitoring_system/src/views/ui/registration/login.dart';
 import 'package:health_monitoring_system/src/views/utils/constant.dart';
 import 'package:health_monitoring_system/src/views/utils/reusable_widgets.dart';
 
@@ -133,7 +134,10 @@ class _RegisterState extends State<Register> {
                     ),
                     GestureDetector(
                       onTap: () {
-
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => login()),
+                        );
                       },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal : 8.0),

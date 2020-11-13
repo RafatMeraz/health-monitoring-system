@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:health_monitoring_system/src/views/ui/registration/register.dart';
 import 'package:health_monitoring_system/src/views/utils/constant.dart';
 
 class login extends StatefulWidget {
@@ -165,7 +166,10 @@ class _loginState extends State<login> {
                           highlightColor: Colors.transparent,
                           disabledElevation: 10,
                           onPressed: (){
-                            print('');
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Register()),
+                            );
                           },
                           child: Text(
                             'Sign Up',
