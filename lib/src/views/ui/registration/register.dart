@@ -94,23 +94,6 @@ class _RegisterState extends State<Register> {
                     fontFamily: "Poppins",
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    RawMaterialButton(
-                      splashColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      disabledElevation: 10,
-                      onPressed: () {
-                        print('');
-                      },
-                      child: Text(
-                        'Forgot Password',
-                        style: greyText,
-                      ),
-                    ),
-                  ],
-                ),
                 SizedBox(
                   height: 20,
                 ),
@@ -133,7 +116,7 @@ class _RegisterState extends State<Register> {
                     ),
                     GestureDetector(
                       onTap: () {
-
+                        Navigator.pop(context);
                       },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal : 8.0),
