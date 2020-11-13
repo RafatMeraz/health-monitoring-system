@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:health_monitoring_system/src/views/ui/registration/login.dart';
 import 'package:health_monitoring_system/src/views/utils/constant.dart';
 import 'package:health_monitoring_system/src/views/utils/reusable_widgets.dart';
 
@@ -95,23 +94,6 @@ class _RegisterState extends State<Register> {
                     fontFamily: "Poppins",
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    RawMaterialButton(
-                      splashColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      disabledElevation: 10,
-                      onPressed: () {
-                        print('');
-                      },
-                      child: Text(
-                        'Forgot Password',
-                        style: greyText,
-                      ),
-                    ),
-                  ],
-                ),
                 SizedBox(
                   height: 20,
                 ),
@@ -134,10 +116,7 @@ class _RegisterState extends State<Register> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => login()),
-                        );
+                        Navigator.pop(context);
                       },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal : 8.0),

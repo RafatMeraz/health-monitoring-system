@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:health_monitoring_system/src/views/ui/registration/register.dart';
+import 'package:health_monitoring_system/src/views/ui/registration/login.dart';
 void main() {
   runApp(MyApp());
 }
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'HMS',
       debugShowCheckedModeBanner: false,
-      home: Register(),
+      home: Login(),
     );
   }
 }
