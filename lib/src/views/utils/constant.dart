@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+const kThemeColor =  Color.fromRGBO(0, 185, 198, 1);
+const kWhiteColor =  Colors.white;
+const kRedColor =  Colors.red;
+const kSoftGreyColor =  Color(0xFFD5D5D5);
+const kBlackColor =  Color(0xFF000000);
 
 const greyText= TextStyle(
   fontSize: 15,
