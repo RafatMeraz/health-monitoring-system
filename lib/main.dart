@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:health_monitoring_system/src/business_logic/services/firebase_services/firebase_services.dart';
 import 'package:health_monitoring_system/src/views/ui/registration/login.dart';
-import 'package:health_monitoring_system/src/views/ui/root/root.dart';
+import 'file:///C:/Users/sohan/Desktop/health-monitoring-system/lib/src/views/ui/operation/splash.dart';
 
 import 'src/views/ui/operation/home.dart';
 void main() {

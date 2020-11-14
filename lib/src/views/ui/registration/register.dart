@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:health_monitoring_system/src/business_logic/services/firebase_services/firebase_services.dart';
+import 'package:health_monitoring_system/src/business_logic/utils/constants.dart';
+import 'package:health_monitoring_system/src/views/ui/operation/home.dart';
 import 'package:health_monitoring_system/src/views/utils/constant.dart';
 import 'package:health_monitoring_system/src/views/utils/reusable_widgets.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
 
 class Register extends StatefulWidget {
   Register({this.auth, this.loginCallback});
@@ -21,6 +27,9 @@ class _RegisterState extends State<Register> {
 
   bool _isLoginForm = false;
   bool _isLoading;
+
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn googleSignIn = GoogleSignIn();
 
   bool validateAndSave() {
     if (email!=null && password!=null) {
@@ -64,7 +73,6 @@ class _RegisterState extends State<Register> {
       }
     }
   }
-
 
 
 
@@ -218,7 +226,20 @@ class _RegisterState extends State<Register> {
                 SizedBox(
                   height: 30,
                 ),
-                RoundedBorderedRaisedButton(text: 'GOOGLE', textColor: kBlackColor, imageLink: 'assets/images/google.png', onTap: () {}, borderColor: kSoftGreyColor, backgroundColor: kWhiteColor),
+                RoundedBorderedRaisedButton(
+                    text: 'GOOGLE',
+                    textColor: kBlackColor,
+                    imageLink: 'assets/images/google.png',
+                    onTap: () async{
+                      await googleSignIn.signIn();
+                      // var result = await signInWithGoogle();
+                      // if (result){
+                      //   checkEmailExists();
+                      // } else {
+                      //   print('SignIn failed!');
+                      // }
+                    },
+                    borderColor: kSoftGreyColor, backgroundColor: kWhiteColor),
                 SizedBox(
                   height: 40,
                 ),

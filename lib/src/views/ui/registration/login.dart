@@ -5,6 +5,11 @@ import 'package:health_monitoring_system/src/views/ui/operation/home.dart';
 import 'package:health_monitoring_system/src/views/ui/registration/register.dart';
 import 'package:health_monitoring_system/src/views/utils/constant.dart';
 import 'package:health_monitoring_system/src/views/utils/reusable_widgets.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
+
 
 class Login extends StatefulWidget {
   Login({this.auth, this.loginCallback});
@@ -17,6 +22,47 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn googleSignIn = GoogleSignIn();
+
+  // Future<String> signInWithGoogle() async {
+  //   await Firebase.initializeApp();
+  //
+  //   final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
+  //   final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount.authentication;
+  //
+  //   final AuthCredential credential = GoogleAuthProvider.credential(
+  //     accessToken: googleSignInAuthentication.accessToken,
+  //     idToken: googleSignInAuthentication.idToken,
+  //   );
+  //
+  //   final UserCredential authResult = await _auth.signInWithCredential(credential);
+  //   final User user = authResult.user;
+  //
+  //   if (user != null) {
+  //     assert(!user.isAnonymous);
+  //     assert(await user.getIdToken() != null);
+  //
+  //     final User currentUser = _auth.currentUser;
+  //     assert(user.uid == currentUser.uid);
+  //
+  //     print('signInWithGoogle succeeded: $user');
+  //
+  //     return '$user';
+  //   }
+  //
+  //   return null;
+  // }
+
+  Future<void> signOutGoogle() async {
+    await googleSignIn.signOut();
+
+    print("User Signed Out");
+  }
+
+
+
   String email,password;
   String _errorMessage;
 
@@ -231,7 +277,10 @@ class _LoginState extends State<Login> {
                       SizedBox(
                         height: 30,
                       ),
-                      RoundedBorderedRaisedButton(text: 'GOOGLE', textColor: kBlackColor, imageLink: 'assets/images/google.png', onTap: () {}, borderColor: kSoftGreyColor, backgroundColor: kWhiteColor),
+                      RoundedBorderedRaisedButton(text: 'GOOGLE', textColor: kBlackColor, imageLink: 'assets/images/google.png',
+                      onTap: () async {
+                        await googleSignIn.signIn();
+                      }, borderColor: kSoftGreyColor, backgroundColor: kWhiteColor),
                       SizedBox(
                         height: 40,
                       ),
