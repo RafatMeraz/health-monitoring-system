@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:health_monitoring_system/src/business_logic/services/firebase_services/firebase_services.dart';
 import 'package:health_monitoring_system/src/views/ui/registration/login.dart';
+import 'package:health_monitoring_system/src/views/ui/root/root.dart';
+
+import 'src/views/ui/operation/home.dart';
 void main() {
   runApp(MyApp());
 }
@@ -11,7 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'HMS',
       debugShowCheckedModeBanner: false,
-      home: Login()
+      home: RootPage(
+        auth: Auth(),
+      )
     );
   }
 }

@@ -1,16 +1,33 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:health_monitoring_system/src/business_logic/services/firebase_services/firebase_services.dart';
 import 'package:health_monitoring_system/src/views/ui/operation/patient_list.dart';
+import 'package:health_monitoring_system/src/views/ui/registration/login.dart';
 import 'package:health_monitoring_system/src/views/utils/constant.dart';
 import 'package:health_monitoring_system/src/views/utils/reusable_widgets.dart';
 
 class Home extends StatefulWidget {
+  final VoidCallback logoutCallback;
+  final BaseAuth auth;
+  const Home({Key key, this.logoutCallback, this.auth}) : super(key: key);
+
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+   BaseAuth auth;
+  _signOut() async {
+    try {
+      await widget.auth.signOut();
+      widget.logoutCallback();
+    } catch (e) {
+      print(e);
+    }
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +44,8 @@ class _HomeState extends State<Home> {
           elevation: 0.0,
           leading: GestureDetector(
             onTap: () {
-              _scaffoldKey.currentState.openDrawer();
+              _scaffoldKey.currentState.openDrawer(
+              );
             },
             child: Image.asset('assets/images/nav-bar.png'),
           ),
@@ -42,7 +60,16 @@ class _HomeState extends State<Home> {
             ),
           ],
         ),
-        drawer: Drawer(),
+        drawer: Drawer(
+          child: Drawer_custom(
+            logout: (){
+              setState(() {
+                _signOut();
+              });
+
+            },
+          ),
+        ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: kThemeColor,
           child: Icon(Icons.add),

@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:health_monitoring_system/src/business_logic/services/firebase_services/firebase_services.dart';
+import 'package:health_monitoring_system/src/views/ui/operation/home.dart';
 import 'package:health_monitoring_system/src/views/ui/registration/login.dart';
 
 
@@ -91,10 +92,10 @@ class _RootPageState extends State<RootPage> {
         break;
       case AuthStatus.LOGGED_IN:
         if (_userId.length > 0 && _userId != null) {
-          // return new Home_Screen(
-          //
-          //   logoutCallback: logoutCallback,
-          // );
+          return Home(
+            auth: widget.auth,
+           logoutCallback: logoutCallback,
+          );
         } else
           return buildWaitingScreen();
         break;

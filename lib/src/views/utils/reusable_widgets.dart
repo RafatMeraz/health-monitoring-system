@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:health_monitoring_system/src/views/ui/operation/home.dart';
 
 import 'constant.dart';
 
@@ -444,6 +445,74 @@ class ReminderItem extends StatelessWidget {
             ),
             Text(day,style: timeTextS,)
           ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+class Drawer_custom extends StatelessWidget {
+  final Function logout;
+//  final String user_email;
+  final Widget userHeader;
+//  final Widget user_avatar;
+  // NetworkImage avatar;
+  Drawer_custom({this.logout, this.userHeader});
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Drawer(
+        elevation: 3,
+        child: NotificationListener<OverscrollIndicatorNotification>(
+          // ignore: missing_return
+          onNotification: (overscroll) {
+            overscroll.disallowGlow();
+          },
+          child: ListView(
+            children: <Widget>[
+              userHeader != null
+                  ? userHeader
+                  : UserAccountsDrawerHeader(
+                accountName: Text('Failed to Load'),
+              ),
+              Container(
+                  height: 30,
+                  width: double.infinity,
+                  color: Colors.transparent,
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        top: 0, left: 5, right: 5, bottom: 0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: <Widget>[
+                        FlatButton(
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                              BorderRadius.all(Radius.circular(5))),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    Home()));
+                          },
+                          color: Colors.blue,
+                          child: Text(
+                            'Edit Profile',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        )
+                      ],
+                    ),
+                  )),
+              ListTile(
+                title: Text("Logout"),
+                trailing: Icon(Icons.arrow_forward),
+                onTap: logout,
+              ),
+            ],
+          ),
         ),
       ),
     );

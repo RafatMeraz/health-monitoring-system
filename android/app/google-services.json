@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1054305825451",
+    "firebase_url": "https://health-monitoring-system-7b072.firebaseio.com",
+    "project_id": "health-monitoring-system-7b072",
+    "storage_bucket": "health-monitoring-system-7b072.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054305825451:android:44c5094981ebc38fcc3dee",
+        "android_client_info": {
+          "package_name": "com.pirox.health_monitoring_system"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1054305825451-vapgbredrllrvo2hm9k5uh9qp4pgab91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_oj3J6S2CFZgj55mTiYK9lZ-bjd26Sb8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1054305825451-vapgbredrllrvo2hm9k5uh9qp4pgab91.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
