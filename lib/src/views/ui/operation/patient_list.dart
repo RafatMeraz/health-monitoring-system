@@ -12,12 +12,7 @@ class _PatientListState extends State<PatientList> {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 3,
-      child: MaterialApp(
-        theme: ThemeData(
-          primaryColor: kThemeColor,
-          accentColor: kThemeColor
-        ),
-        home: Scaffold(
+        child : Scaffold(
           appBar: AppBar(
             backgroundColor: kThemeColor,
             bottom: TabBar(
@@ -31,6 +26,7 @@ class _PatientListState extends State<PatientList> {
               ],
             ),
             title: Text('Patients'),
+            centerTitle: true,
           ),
           body: TabBarView(
             children: [
@@ -241,7 +237,6 @@ class _PatientListState extends State<PatientList> {
             ],
           ),
         ),
-      ),
     );
   }
 }

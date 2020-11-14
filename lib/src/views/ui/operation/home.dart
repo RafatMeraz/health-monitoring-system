@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:health_monitoring_system/src/views/ui/operation/patient_list.dart';
 import 'package:health_monitoring_system/src/views/utils/constant.dart';
 import 'package:health_monitoring_system/src/views/utils/reusable_widgets.dart';
 
@@ -49,125 +50,112 @@ class _HomeState extends State<Home> {
         ),
         extendBodyBehindAppBar: true,
         body: SafeArea(
-            child: SingleChildScrollView(
-              child: Column(
+            child: Stack(
               children: [
-              Padding(
-                padding: const EdgeInsets.all(12),
-                child: Row(
+                Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Image.asset('assets/images/home-bg.png')),
+                SingleChildScrollView(
+                  child: Column(
                   children: [
-                    Expanded(
-                      child: HomeSingleMenu(
-                        iconData: Icons.people,
-                        iconColor: Colors.green[600],
-                        value: '35',
-                        text: 'Total Patient',
-                        onTap: () {
-
-                        },
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Expanded(
-                      child: HomeSingleMenu(
-                        value: '12',
-                        text: 'Starred',
-                        onTap: (){},
-                        iconColor: Colors.indigoAccent,
-                        iconData: Icons.star_border,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(12),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Recent',
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Column(
+                  Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: Row(
                       children: [
-                        DasBoardItems(
-                          name: 'Rafat Jamader Maraz',
-                          bed: '43',
-                          color: Colors.red,
+                        Expanded(
+                          child: HomeSingleMenu(
+                            iconData: Icons.people,
+                            iconColor: Colors.green[600],
+                            value: '35',
+                            text: 'Total Patient',
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => PatientList()));
+                            },
+                          ),
                         ),
                         SizedBox(
-                          height: 10,
+                          width: 20,
                         ),
-                        DasBoardItems(
-                          name: 'Rafat Jamader Maraz',
-                          bed: '43',
-                          color: Colors.yellow,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        DasBoardItems(
-                          name: 'Rafat Jamader Maraz',
-                          bed: '43',
-                          color: Colors.red,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        DasBoardItems(
-                          name: 'Rafat Jamader Maraz',
-                          bed: '43',
-                          color: Colors.yellow,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        DasBoardItems(
-                          name: 'Rafat Jamader Maraz',
-                          bed: '43',
-                          color: Colors.red,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        DasBoardItems(
-                          name: 'Rafat Jamader Maraz',
-                          bed: '43',
-                          color: Colors.yellow,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        DasBoardItems(
-                          name: 'Rafat Jamader Maraz',
-                          bed: '43',
-                          color: Colors.red,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        DasBoardItems(
-                          name: 'Rafat Jamader Maraz',
-                          bed: '43',
-                          color: Colors.yellow,
+                        Expanded(
+                          child: HomeSingleMenu(
+                            value: '12',
+                            text: 'Starred',
+                            onTap: (){},
+                            iconColor: Colors.indigoAccent,
+                            iconData: Icons.star_border,
+                          ),
                         ),
                       ],
-                    )
-                  ],
-                ),
-              )
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Recent',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Column(
+                          children: [
+                            DasBoardItems(
+                              name: 'Rafat Jamader Maraz',
+                              bed: '43',
+                              color: Colors.red,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            DasBoardItems(
+                              name: 'Rafat Jamader Maraz',
+                              bed: '43',
+                              color: Colors.yellow,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            DasBoardItems(
+                              name: 'Rafat Jamader Maraz',
+                              bed: '43',
+                              color: Colors.red,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            DasBoardItems(
+                              name: 'Rafat Jamader Maraz',
+                              bed: '43',
+                              color: Colors.yellow,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            DasBoardItems(
+                              name: 'Rafat Jamader Maraz',
+                              bed: '43',
+                              color: Colors.red,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  )
           ],
         ),
+                ),
+
+              ],
             )));
   }
 }

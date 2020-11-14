@@ -141,32 +141,35 @@ class HomeSingleMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(15)),
-          border: Border.all(
-            color: kThemeColor,
-            width: 1,
-          )),
-      child: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Icon(iconData, size: 30, color: iconColor),
-                SizedBox(width: 5),
-                Text(value,
-                  style: HomeText,
-                ),
-              ],
-            ),
-            SizedBox(height: 4),
-            Text(text,
-              style: HomeSub,)
-          ],
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(15)),
+            border: Border.all(
+              color: kThemeColor,
+              width: 1,
+            )),
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Icon(iconData, size: 30, color: iconColor),
+                  SizedBox(width: 5),
+                  Text(value,
+                    style: HomeText,
+                  ),
+                ],
+              ),
+              SizedBox(height: 4),
+              Text(text,
+                style: HomeSub,)
+            ],
+          ),
         ),
       ),
     );
