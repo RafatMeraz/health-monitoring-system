@@ -38,7 +38,7 @@ class _PatientListState extends State<PatientList> {
                 padding: const EdgeInsets.all(12),
                 child: Column(
                   children: [
-                    DasBoard_Items(
+                    DasBoardItems(
                       name: 'Rafat Jamader Maraz',
                       bed: '43',
                       color: Colors.red,
@@ -46,7 +46,7 @@ class _PatientListState extends State<PatientList> {
                     SizedBox(
                       height: 10,
                     ),
-                    DasBoard_Items(
+                    DasBoardItems(
                       name: 'Rafat Jamader Maraz',
                       bed: '43',
                       color: Colors.yellow,
@@ -54,7 +54,7 @@ class _PatientListState extends State<PatientList> {
                     SizedBox(
                       height: 10,
                     ),
-                    DasBoard_Items(
+                    DasBoardItems(
                       name: 'Rafat Jamader Maraz',
                       bed: '43',
                       color: Colors.red,
@@ -62,7 +62,7 @@ class _PatientListState extends State<PatientList> {
                     SizedBox(
                       height: 10,
                     ),
-                    DasBoard_Items(
+                    DasBoardItems(
                       name: 'Rafat Jamader Maraz',
                       bed: '43',
                       color: Colors.yellow,
@@ -70,7 +70,7 @@ class _PatientListState extends State<PatientList> {
                     SizedBox(
                       height: 10,
                     ),
-                    DasBoard_Items(
+                    DasBoardItems(
                       name: 'Rafat Jamader Maraz',
                       bed: '43',
                       color: Colors.red,
@@ -78,7 +78,7 @@ class _PatientListState extends State<PatientList> {
                     SizedBox(
                       height: 10,
                     ),
-                    DasBoard_Items(
+                    DasBoardItems(
                       name: 'Rafat Jamader Maraz',
                       bed: '43',
                       color: Colors.yellow,
@@ -86,7 +86,7 @@ class _PatientListState extends State<PatientList> {
                     SizedBox(
                       height: 10,
                     ),
-                    DasBoard_Items(
+                    DasBoardItems(
                       name: 'Rafat Jamader Maraz',
                       bed: '43',
                       color: Colors.red,
@@ -94,75 +94,7 @@ class _PatientListState extends State<PatientList> {
                     SizedBox(
                       height: 10,
                     ),
-                    DasBoard_Items(
-                      name: 'Rafat Jamader Maraz',
-                      bed: '43',
-                      color: Colors.yellow,
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(12),
-                child: Column(
-                  children: [
-                    DasBoard_Items(
-                      name: 'Rafat Jamader Maraz',
-                      bed: '43',
-                      color: Colors.red,
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    DasBoard_Items(
-                      name: 'Rafat Jamader Maraz',
-                      bed: '43',
-                      color: Colors.yellow,
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    DasBoard_Items(
-                      name: 'Rafat Jamader Maraz',
-                      bed: '43',
-                      color: Colors.red,
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    DasBoard_Items(
-                      name: 'Rafat Jamader Maraz',
-                      bed: '43',
-                      color: Colors.yellow,
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    DasBoard_Items(
-                      name: 'Rafat Jamader Maraz',
-                      bed: '43',
-                      color: Colors.red,
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    DasBoard_Items(
-                      name: 'Rafat Jamader Maraz',
-                      bed: '43',
-                      color: Colors.yellow,
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    DasBoard_Items(
-                      name: 'Rafat Jamader Maraz',
-                      bed: '43',
-                      color: Colors.red,
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    DasBoard_Items(
+                    DasBoardItems(
                       name: 'Rafat Jamader Maraz',
                       bed: '43',
                       color: Colors.yellow,
@@ -174,7 +106,7 @@ class _PatientListState extends State<PatientList> {
                 padding: const EdgeInsets.all(12),
                 child: Column(
                   children: [
-                    DasBoard_Items(
+                    DasBoardItems(
                       name: 'Rafat Jamader Maraz',
                       bed: '43',
                       color: Colors.red,
@@ -182,7 +114,7 @@ class _PatientListState extends State<PatientList> {
                     SizedBox(
                       height: 10,
                     ),
-                    DasBoard_Items(
+                    DasBoardItems(
                       name: 'Rafat Jamader Maraz',
                       bed: '43',
                       color: Colors.yellow,
@@ -190,7 +122,7 @@ class _PatientListState extends State<PatientList> {
                     SizedBox(
                       height: 10,
                     ),
-                    DasBoard_Items(
+                    DasBoardItems(
                       name: 'Rafat Jamader Maraz',
                       bed: '43',
                       color: Colors.red,
@@ -198,7 +130,7 @@ class _PatientListState extends State<PatientList> {
                     SizedBox(
                       height: 10,
                     ),
-                    DasBoard_Items(
+                    DasBoardItems(
                       name: 'Rafat Jamader Maraz',
                       bed: '43',
                       color: Colors.yellow,
@@ -206,7 +138,7 @@ class _PatientListState extends State<PatientList> {
                     SizedBox(
                       height: 10,
                     ),
-                    DasBoard_Items(
+                    DasBoardItems(
                       name: 'Rafat Jamader Maraz',
                       bed: '43',
                       color: Colors.red,
@@ -214,7 +146,7 @@ class _PatientListState extends State<PatientList> {
                     SizedBox(
                       height: 10,
                     ),
-                    DasBoard_Items(
+                    DasBoardItems(
                       name: 'Rafat Jamader Maraz',
                       bed: '43',
                       color: Colors.yellow,
@@ -222,7 +154,7 @@ class _PatientListState extends State<PatientList> {
                     SizedBox(
                       height: 10,
                     ),
-                    DasBoard_Items(
+                    DasBoardItems(
                       name: 'Rafat Jamader Maraz',
                       bed: '43',
                       color: Colors.red,
@@ -230,7 +162,75 @@ class _PatientListState extends State<PatientList> {
                     SizedBox(
                       height: 10,
                     ),
-                    DasBoard_Items(
+                    DasBoardItems(
+                      name: 'Rafat Jamader Maraz',
+                      bed: '43',
+                      color: Colors.yellow,
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(12),
+                child: Column(
+                  children: [
+                    DasBoardItems(
+                      name: 'Rafat Jamader Maraz',
+                      bed: '43',
+                      color: Colors.red,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    DasBoardItems(
+                      name: 'Rafat Jamader Maraz',
+                      bed: '43',
+                      color: Colors.yellow,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    DasBoardItems(
+                      name: 'Rafat Jamader Maraz',
+                      bed: '43',
+                      color: Colors.red,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    DasBoardItems(
+                      name: 'Rafat Jamader Maraz',
+                      bed: '43',
+                      color: Colors.yellow,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    DasBoardItems(
+                      name: 'Rafat Jamader Maraz',
+                      bed: '43',
+                      color: Colors.red,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    DasBoardItems(
+                      name: 'Rafat Jamader Maraz',
+                      bed: '43',
+                      color: Colors.yellow,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    DasBoardItems(
+                      name: 'Rafat Jamader Maraz',
+                      bed: '43',
+                      color: Colors.red,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    DasBoardItems(
                       name: 'Rafat Jamader Maraz',
                       bed: '43',
                       color: Colors.yellow,

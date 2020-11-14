@@ -130,34 +130,40 @@ class RoundedBorderedRaisedButton extends StatelessWidget {
 
 
 
-class Dasboard_Menu extends StatelessWidget {
+class HomeSingleMenu extends StatelessWidget {
+  const HomeSingleMenu({Key key, @required this.value,  @required this.iconData, @required this.iconColor, @required this.text, @required this.onTap}) : super(key: key);
+
   final String value;
   final String text;
+  final Function onTap;
+  final IconData iconData;
+  final Color iconColor;
 
-  const Dasboard_Menu({Key key, this.value, this.text}) : super(key: key);
   @override
-
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints(
-        maxHeight: 116,
-        maxWidth: 160,
-      ),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(15)),
           border: Border.all(
             color: kThemeColor,
-            width: 3,
+            width: 1,
           )),
       child: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.all(12.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(value,
-              style: HomeText,
+            Row(
+              children: [
+                Icon(iconData, size: 30, color: iconColor),
+                SizedBox(width: 5),
+                Text(value,
+                  style: HomeText,
+                ),
+              ],
             ),
+            SizedBox(height: 4),
             Text(text,
               style: HomeSub,)
           ],
@@ -167,63 +173,60 @@ class Dasboard_Menu extends StatelessWidget {
   }
 }
 
-class DasBoard_Items extends StatelessWidget {
+class DasBoardItems extends StatelessWidget {
   final String name;
   final String bed;
   final Color color;
 
-  const DasBoard_Items({Key key, this.name,this.bed, this.color}) : super(key: key);@override
+  const DasBoardItems({Key key, this.name,this.bed, this.color}) : super(key: key);@override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        color: kWhiteColor,
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          border: Border.all(
+            color: kSoftGreyColor,
+            width: 1,
+          ),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
-            spreadRadius: 5,
-            blurRadius: 5,
-            offset: Offset(0, 5), // changes position of shadow
+            color: Colors.grey.withOpacity(0.1),
+            spreadRadius: 1,
+            blurRadius: 2,
+            offset: Offset(0, 1), // changes position of shadow
           ),
-        ]
+        ],
       ),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(15)),
-            border: Border.all(
-            color: Colors.blueGrey,
-            width: 2,
-
-          )),
-        child: Padding(
-          padding: const EdgeInsets.all(12),
-          child: Column(
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-                    Row(
-                        children: [
-                            Text(name, style: HomeItem,),
-                            Spacer(),
-                            Container(
-                            constraints: BoxConstraints(
-                            maxHeight: 20,
-                              maxWidth: 20,
-                        ),
-                             decoration: BoxDecoration(
-                              color: color,
-                            borderRadius: BorderRadius.all(Radius.circular(10))
-                        ),
-                        )
-                    ],
-                      ),
-                        Text('Bed No:$bed',
-                          style: HomeItemSub,
-                      )]),
-        ),
+              Row(
+                children: [
+                  Text(
+                    name,
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                  ),
+                  Spacer(),
+                  CircleAvatar(
+                    backgroundColor: color,
+                    radius: 8,
+                  )
+                ],
+              ),
+              Text(
+                'Bed No: $bed',
+                style: TextStyle(
+                  fontSize: 16
+                ),
+              )
+            ]),
       ),
     );
   }
 }
-
 
 class PatientIdentity extends StatelessWidget {
   final String name;

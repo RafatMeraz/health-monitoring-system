@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:health_monitoring_system/src/business_logic/services/firebase_services/firebase_services.dart';
+import 'package:health_monitoring_system/src/views/ui/operation/home.dart';
 import 'package:health_monitoring_system/src/views/ui/registration/register.dart';
 import 'package:health_monitoring_system/src/views/utils/constant.dart';
 import 'package:health_monitoring_system/src/views/utils/reusable_widgets.dart';
@@ -180,8 +181,9 @@ class _LoginState extends State<Login> {
                         height: 20,
                       ),
                       RoundedRaisedButton(text: 'SIGN IN', textColor: kWhiteColor, imageLink: null, onTap: (){
-                        validateAndSubmit();
+                        // validateAndSubmit();
                         //print(email+":"+password);
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
                       }, backgroundColor: kThemeColor),
                       SizedBox(
                         height: 20,

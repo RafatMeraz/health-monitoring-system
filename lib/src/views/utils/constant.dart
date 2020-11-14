@@ -17,15 +17,16 @@ const greyTextL= TextStyle(
 );
 
 
-const HomeText= TextStyle(
-  fontSize: 40,
-  fontWeight: FontWeight.bold,
+const HomeText = TextStyle(
+  fontSize: 30,
+  fontWeight: FontWeight.w600,
   color: Color.fromRGBO(0, 185, 198, 1),
 );
 
 const HomeSub= TextStyle(
   fontSize: 20,
-  fontWeight: FontWeight.bold,
+  fontWeight: FontWeight.w400,
+  letterSpacing: 0.2,
   color: Colors.black,
 );
 
